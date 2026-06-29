@@ -5,7 +5,7 @@
   "publisher": "SerhiiPok",
   "license": "MIT",
   "repository": "https://github.com/CoderSerg/opiumicon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -17,11 +17,20 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "icons":{
+      "opiumware-logo": {
+        "description": "Opiumware logo",
+        "default": {
+          "fontPath": "opiumware.woff",
+          "fontCharacter": "\\E001"
+        }
+      }
+    },
     "commands": [
       {
         "command": "opiumware.execute",
         "title": "Execute LuaU Script",
-        "icon": "$(zap)"
+        "icon": "$(opiumware-logo)"
       }
     ],
     "menus": {
