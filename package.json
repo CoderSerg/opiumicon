@@ -1,0 +1,46 @@
+{
+  "name": "opiumware-executor",
+  "displayName": "Opiumware Icon",
+  "description": "Run Lua scripts via Opiumware",
+  "publisher": "SerhiiPok",
+  "license": "MIT",
+  "repository": "https://github.com/CoderSerg/opiumicon",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "opiumware.execute",
+        "title": "Execute LuaU Script",
+        "icon": "$(zap)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "opiumware.execute",
+          "group": "navigation",
+          "when": "resourceExtname == .lua || resourceExtname == .luau"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}
